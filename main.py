@@ -9,6 +9,13 @@ product_list = [
 ]
 
 def start(store: Store):
+    """Main menu function for user interaction with the store.
+        Presents a CLI menu to:
+            1. List products
+            2. Show total inventory
+            3. Make an order
+            4. Exit the program"""
+
     while True:
         print("\nStore Menu")
         print("-----------------------------")
