@@ -1,20 +1,13 @@
 from products import Product # We import our Product class
 from store import Store # We import our Store class
 
-# Setup initial stock of inventory
-product_list = [
-    Product("MacBook Air M2", price=1450, quantity=100),
-    Product("Bose QuietComfort Earbuds", price=250, quantity=500),
-    Product("Google Pixel 7", price=500, quantity=250)
-]
-
 def start(store: Store):
     """Main menu function for user interaction with the store.
-        Presents a CLI menu to:
-            1. List products
-            2. Show total inventory
-            3. Make an order
-            4. Exit the program"""
+    Presents a CLI menu to:
+        1. List products
+        2. Show total inventory
+        3. Make an order
+        4. Exit the program"""
 
     while True:
         print("\nStore Menu")
@@ -56,7 +49,7 @@ def start(store: Store):
                         break
                     elif 1 <= prod_num <= len(products):
                         selected_product = products[prod_num - 1]
-                        quantity = int(input("Quantity: "))
+                        quantity = int(input("How many do you want to buy?: "))
 
                         if quantity > selected_product.get_quantity(): # Handle quantity exceeds available stock
                             print(f"Not enough stock available. Only {selected_product.get_quantity()} in stock.")
@@ -75,8 +68,15 @@ def start(store: Store):
                 except Exception as e:
                     print(f"Error placing order: {e}")
 
+        elif choice == '4':
+            print("Thank you for visiting Best Buy. Goodbye!")
+            break
+
+        else:
+            print("Invalid choice. Please choose from 1 to 4.")
 # Setup inventory and start
 if __name__ == '__main__':
+    # Setup initial stock of inventory
     product_list = [
         Product("MacBook Air M2", price=1450, quantity=100),
         Product("Bose QuietComfort Earbuds", price=250, quantity=500),
