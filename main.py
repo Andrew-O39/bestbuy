@@ -48,8 +48,14 @@ def start(store: Store):
                     elif prod_num == -1:
                         break
                     elif 1 <= prod_num <= len(products):
+                        selected_product = products[prod_num - 1]
                         quantity = int(input("Quantity: "))
-                        shopping_list.append((products[prod_num - 1], quantity))
+
+                        if quantity > selected_product.get_quantity(): # Handle quantity exceeds available stock
+                            print(f"Not enough stock available. Only {selected_product.get_quantity()} in stock.")
+                        else:
+                            shopping_list.append((selected_product, quantity))
+                            print("Item added to order.")
                     else:
                         print("Invalid product number.")
                 except ValueError:
