@@ -76,7 +76,6 @@ def start(store: Store):
             print("Invalid choice. Please choose from 1 to 4.")
 # Setup inventory and start
 if __name__ == '__main__':
-    # Setup initial stock of inventory
     product_list = [
         Product("MacBook Air M2", price=1450, quantity=100),
         Product("Bose QuietComfort Earbuds", price=250, quantity=500),
