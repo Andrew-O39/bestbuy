@@ -51,7 +51,7 @@ def start(store: Store):
                         selected_product = products[prod_num - 1]
                         quantity = int(input("How many do you want to buy?: "))
 
-                        if quantity > selected_product.get_quantity(): # Handle quantity exceeds available stock
+                        if quantity > selected_product.get_quantity(): # Handle if quantity exceeds available stock
                             print(f"Not enough stock available. Only {selected_product.get_quantity()} in stock.")
                         else:
                             shopping_list.append((selected_product, quantity))
@@ -69,7 +69,7 @@ def start(store: Store):
                     print(f"Error placing order: {e}")
 
         elif choice == '4':
-            print("Thank you for visiting Best Buy. Goodbye!")
+            print("\nThank you for visiting Best Buy. Goodbye!")
             break
 
         else:

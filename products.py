@@ -1,12 +1,10 @@
 class Product:
-    """
-    Represents a single product in the store.
-    Attributes:
-        name (str): The name of the product.
-        price (float): The price per unit.
-        quantity (int): Units available in stock.
-        active (bool): Whether the product is active (available for sale).
-    """
+    """Represents a single product in the store.
+        Attributes:
+            name (str): The name of the product.
+            price (float): The price per unit.
+            quantity (int): Units available in stock.
+            active (bool): Whether the product is active (available for sale)."""
 
     def __init__(self, name: str, price: float, quantity: int):
         """Initializes a new product. Raises ValueError if input is invalid."""
