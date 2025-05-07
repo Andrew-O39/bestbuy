@@ -44,6 +44,16 @@ class Product:
         return f"{self.name}, Price: {self.price}, Quantity: {self.quantity}"
 
     def buy(self, quantity: int) -> float:
+        """Processes the purchase of a given quantity of the product.
+        Reduces the product's available quantity and deactivates it if quantity reaches zero.
+        Args:
+            quantity (int): The number of units to purchase.
+        Returns:
+                float: The total price of the purchase (price * quantity).
+        Raises:
+                Exception: If the product is inactive or if the requested quantity
+                is invalid (e.g., greater than available or non-positive)."""
+
         if not self.active:
             raise Exception(f"Product '{self.name}' is not active.")
         if quantity <= 0:
